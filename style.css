@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Sansation-Bold' ;
+    src: url(/fonts/Sansation-BoldItalic.ttf);
+}
+
+
+
+body {
+    margin:0;
+    font-family: 'Sansation-Bold', sans-serif;
+    background-color:rgb(23, 49, 94);
+}
+
+header {    
+    height: 100px;
+    background-color:rgb(44, 83, 149);
+}
+
+.header-logo{
+    width: 350px;
+    margin: 20px;    
+}
+main {
+   main {
+    display: flex;
+    justify-content: center; /* Zentriert horizontal */
+    align-items: center;     /* Zentriert vertikal */
+    flex: 1;
+}
+
+}
+h1 {
+    text-align: center;
+    margin-top: 150px;
+    color: white;
+    font-size: 80px;
+}
+footer{
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    
+    height: 100px;
+    background-color:rgb(44, 83, 149);
+}
