@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="DE">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fotogram</title>
-     <link rel="icon" type="image/png" href="/Icons/favicon.svg" />
-     <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header>
-   <img class="header-logo" src="/Icons/Fotogram_Logo.svg" alt="Header-Logo">    
-</header>
-<main>
-    <h1>Mein persönliches Fotoalbum</h1>
-    <div>
-        
-    </div>
-</main>
-  
+    <link rel="icon" type="image/png" href="/Icons/favicon.svg" alt="Logo" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <img
+        class="header-logo"
+        src="/Icons/Fotogram_Logo.svg"
+        alt="Header-Logo"
+      />
+      <nav class="nav-bar">
+        <a href="tel:+491715120272">Tel: +491715120272</a>
+        <a href="mailto:dev.christopher-braun@gmail.com"
+          >dev.christopher-braun@gmail.com</a
+        >
+      </nav>
+    </header>
+    <main>
+      <h1>Mein persönliches Fotoalbum</h1>
+      <!--hier ist mein Stand, id= view....  -->
 
-<footer>
-   © 2025 – Christopher Braun
-</footer>
-</body>
+      <div id="holidaypicture"></div>
+
+      <!-- Overlay für das große Bild -->
+      <div id="overlay" style="display: none">
+        <span id="close-btn">&times;</span>
+        <img id="overlay-img" src="" alt="Großes Bild" />
+      </div>
+
+      <script src="/script.js"></script>
+    </main>
+
+    <footer>
+      <img class="footer-icon" src="/Icons/favicon.png" alt="" />
+      © 2025 – Christopher Braun
+    </footer>
+  </body>
 </html>
