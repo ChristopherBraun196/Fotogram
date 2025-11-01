@@ -16,6 +16,20 @@ const pictures = [ //Bilder NAMEN + GRÖßE muss noch angepasst werden
     "./img/IMG_9154.jpg",    
 ];
 
+// Bildebeschreibung
+let pictureDescription = [
+    "Hotel Außenansicht",
+    "Strand auf Mallorca",
+    "Blick vom Hotelzimmer Morgens",
+    "Blick vom Hotelzimmer Mittags",
+    "Aquarium mit Meerfischen",
+    "Strand auf Mallorca",
+    "Schildkröten von Oben",
+    "Hai im Aquarium",
+    "Hai im Aquarium von der Nähe",
+    "Strand Spaziergang auf Mallorca",  
+  ];
+
 // Overlay-Elemente
 const overlay = document.getElementById("overlay");
 const overlayImg = document.getElementById("overlay-img");
@@ -35,7 +49,9 @@ for (let i = 0; i < pictures.length; i++) {
   // Wenn auf das Bild geklickt wird
   img.addEventListener("click", function() {
     overlayImg.src = this.src;       // zeig das gleiche Bild groß
+    overlay.textContent = pictureDescription; // <<<<<<<<< 
     overlay.style.display = "flex";  // zeig das Overlay
+   
   });
 
   container.appendChild(img);                   // In den Container einfügen
@@ -43,6 +59,7 @@ for (let i = 0; i < pictures.length; i++) {
 
 closeBtn.addEventListener("click", function() {
   overlay.style.display = "none";
+  
 });
 
 
