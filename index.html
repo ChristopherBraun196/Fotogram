@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="/Icons/favicon.svg" alt="Logo" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body id="headline">
     <header>
       <img
         class="header-logo"
@@ -23,7 +23,7 @@
     </header>
     <main>
       <h1>Mein persönliches Fotoalbum</h1>
-      <!--hier ist mein Stand, id= view....  -->
+     
 
       <div id="holidaypicture"></div>
 
@@ -40,5 +40,13 @@
       <img class="footer-icon" src="/Icons/favicon.png" alt="" />
       © 2025 – Christopher Braun
     </footer>
+
+    <script>
+      function setFocusOnTop(){
+        const elemRef = document.getElementById("headline");
+        elemRef.focus();
+      }
+    </script>
+
   </body>
 </html>

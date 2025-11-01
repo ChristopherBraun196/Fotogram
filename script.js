@@ -16,19 +16,20 @@ const pictures = [ //Bilder NAMEN + GRÖßE muss noch angepasst werden
     "./img/IMG_9154.jpg",    
 ];
 
-
 // Overlay-Elemente
 const overlay = document.getElementById("overlay");
 const overlayImg = document.getElementById("overlay-img");
 const closeBtn = document.getElementById("close-btn");
 
-// 3. Eine Schleife, um jedes Bild einzufügen    KLEINE BILDER
+
+//Eine Schleife, um jedes Bild einzufügen    KLEINE BILDER
 for (let i = 0; i < pictures.length; i++) {
   const img = document.createElement("img");    // Richtiges <img>-Element erstellen
   img.src = pictures[i];                        // Pfad zum Bild setzen
   img.style.width = "250px";                    // Kleine Anzeigegröße
   img.style.margin = "10px";                    // Abstand zwischen Bildern
   img.style.cursor = "pointer";                 // Zeigt, dass man klicken kann
+  img.style.borderRadius = "10px";
 
 
   // Wenn auf das Bild geklickt wird
@@ -44,5 +45,6 @@ closeBtn.addEventListener("click", function() {
   overlay.style.display = "none";
 });
 
-// 4. Kontrollausgabe
-console.log(pictures);
+
+
+// Kontrollausgabe console.log(pictures);
