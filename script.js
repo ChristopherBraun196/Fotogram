@@ -17,8 +17,8 @@ const pictures = [ //Bilder NAMEN + GRÖßE muss noch angepasst werden
 ];
 
 // Bildebeschreibung
-let pictureDescription = [
-    "Hotel Außenansicht",
+const pictureDescription = [
+    "Hotel Außenansicht", 
     "Strand auf Mallorca",
     "Blick vom Hotelzimmer Morgens",
     "Blick vom Hotelzimmer Mittags",
@@ -26,19 +26,20 @@ let pictureDescription = [
     "Strand auf Mallorca",
     "Schildkröten von Oben",
     "Hai im Aquarium",
-    "Hai im Aquarium von der Nähe",
+    "Hai im Aquarium aus der Nähe",
     "Strand Spaziergang auf Mallorca",  
   ];
 
 // Overlay-Elemente
 const overlay = document.getElementById("overlay");
 const overlayImg = document.getElementById("overlay-img");
+const Description = document.getElementById ("pictureDescription")
 const closeBtn = document.getElementById("close-btn");
 
 
 //Eine Schleife, um jedes Bild einzufügen    KLEINE BILDER
 for (let i = 0; i < pictures.length; i++) {
-  const img = document.createElement("img");    // Richtiges <img>-Element erstellen
+  const img = document.createElement("img");    // Richtiges <img>-Element erstellen 
   img.src = pictures[i];                        // Pfad zum Bild setzen
   img.style.width = "250px";                    // Kleine Anzeigegröße
   img.style.margin = "10px";                    // Abstand zwischen Bildern
@@ -49,7 +50,7 @@ for (let i = 0; i < pictures.length; i++) {
   // Wenn auf das Bild geklickt wird
   img.addEventListener("click", function() {
     overlayImg.src = this.src;       // zeig das gleiche Bild groß
-    overlay.textContent = pictureDescription; // <<<<<<<<< 
+    overlay.innerHTML += pictureDescription [i]; // Bild Beschreibung hinzufügen
     overlay.style.display = "flex";  // zeig das Overlay
    
   });

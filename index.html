@@ -28,24 +28,26 @@
 
       <!-- Overlay für das große Bild -->
       <div id="overlay" style="display: none">
-        <span id="close-btn">&times;</span>
-        <img id="overlay-img" src="" alt id="pictureDescription" />
-      </div>
+        <span id="close-btn" aria-label="Schließen">&times;</span>
+        <span id="prev-btn" aria-label="Vorheriges Bild"></span>
+        <img id="overlay-img" src="" alt= "" />
+        <p id="Description" aria-label="Bildbeschreibung"></p>
+        <span id="next-btn" aria-label="Nächstes Bild"></span>
 
       <script src="./script.js"></script>
     </main>
 
     <footer>
-      <img class="footer-icon" src="./Icons/favicon.png" alt="" />
+      <img class="footer-icon" src="./Icons/favicon.png" alt="footer-icon" />
       © 2025 – Christopher Braun
     </footer>
 
-    <script>
+    <!-- <script>
       function setFocusOnTop(){
         const elemRef = document.getElementById("headline");
         elemRef.focus();
       }
-    </script>
+    </script> -->
 
   </body>
 </html>
