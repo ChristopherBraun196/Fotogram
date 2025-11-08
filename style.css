@@ -109,7 +109,6 @@ dialog::backdrop {
   width: 50px;
   height: 50px;
   cursor: pointer;
-  /* z-index: 1; */
   transition: 0.3s ease, transform 0.2s ease;
 }
 
@@ -118,10 +117,13 @@ dialog::backdrop {
   transform: scale(1.1);
 }
 
+#closeBtn:hover {
+  background: rgba(0,0,0,0.85);
+}
+
 .nav-btn {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   background: rgba(0,0,0,0.6);
   color: red;
   border: 2px;
@@ -132,15 +134,29 @@ dialog::backdrop {
   font-size: 28px;
   line-height: 1;
   cursor: pointer;
-  z-index: 3;
+  
+}
+.nav-btn:hover{
+   background: rgba(0, 0, 0, 0.85);
+
 }
 
-#prevBtn { left: 16px; }
-#nextBtn { right: 16px; }
+#prevBtn { 
+  left: 16px; 
+}
 
-.nav-btn:hover,
-#closeBtn:hover {
-  background: rgba(0,0,0,0.85);
+#prevBtn:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease, transform 0.2s ease;
+}
+
+#nextBtn { 
+  right: 16px; 
+}
+
+#nextBtn:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease, transform 0.2s ease;
 }
 
 #pictureDescription {
@@ -150,7 +166,6 @@ dialog::backdrop {
   margin-top: 10px;
   font-weight: 500;
 }
-
 
 footer {
   position: absolute;

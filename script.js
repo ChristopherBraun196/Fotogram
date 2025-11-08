@@ -3,13 +3,14 @@ const container = document.getElementById("holidaypicture");
 const dialog = document.getElementById("pictureDialog");
 const bigImg = document.getElementById("bigImg");
 
+// Button vom Dialog 
 const closeBtn = document.getElementById("closeBtn");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 
 //Meine Bilder
 const pictures = [
-  //Bilder NAMEN + GRÖßE muss noch angepasst werden
+  //Bilder (NAMEN + GRÖßE muss noch angepasst werden)
   "./img/IMG_5554.jpg",
   "./img/IMG_5555.jpg",
   "./img/IMG_5607.jpg",
