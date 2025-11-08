@@ -33,27 +33,45 @@ const pictureDescription = [
   "Strand Spaziergang auf Mallorca",
 ];
 
+// Dialogfenster öffnen
+function openDialog(src, altText, description) {
+  bigImg.src = src;
+  bigImg.alt = altText;
+  const descElem = document.getElementById("pictureDescription");
+  descElem.textContent = description;
+  dialog.showModal("bigImg");
+  dialog.classList.add("opened");
+}
+
+// Dialogfenster schließen
+function closeDialog() {
+  dialog.close();
+  dialog.classList.remove("opened");
+}
+
+dialog.addEventListener("click", (event) =>{
+  if (event.target === dialog) {
+    closeDialog();
+  }
+} )
+document.getElementById("closeBtn").addEventListener("click", closeDialog);
+
 //Eine Schleife, um jedes Bild einzufügen    KLEINE BILDER
 for (let i = 0; i < pictures.length; i++) {
   const img = document.createElement("img"); // Richtiges <img>-Element erstellen
-  img.src = pictures[i]; // Pfad zum Bild setzen
+  img.src = pictures[i]; // Pfad zum Bild
   img.alt = pictureDescription[i] || `Bild ${i + 1}`;
   img.classList.add("small-img"); // img css style
+  img.loading = "lazy";
 
+// Klick öffnet das Bild im Dialog über unsere Funktion:
+ img.addEventListener("click", () => openDialog(pictures[i], pictureDescription[i], pictureDescription[i]));
+
+ container.appendChild(img);
   // Wenn auf das Bild geklickt wird
 
-  img.onclick = () => {
-    bigImg.src = pictures[i];
-    dialog.classList.add("bigImg"); // img css style
-    dialog.showModal();
-  };
-  container.appendChild(img);
+ 
 
-  dialog.addEventListener("click", (e) => {
-    if (e.target === dialog) {
-      dialog.close();
-    }
-  });
 }
 
 // Kontrollausgabe console.log(closeBtn);

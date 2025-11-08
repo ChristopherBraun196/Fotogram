@@ -58,7 +58,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
-  justify-items: center; 
+  justify-items: center;
   max-width: calc(5 * 250px + 4 * 25px); /* 5 Bilder nebeneinander */
   margin: 0 auto;
 }
@@ -70,6 +70,60 @@ h1 {
 }
 .small-img:hover {
   transform: scale(1.1);
+}
+
+dialog {
+  border: none;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+  position: fixed;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+  border: none;
+}
+
+/* Bild zentrieren */
+#bigImg {
+  display: block;
+  max-width: 70vw;
+  max-height: 60vh;
+  margin: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.8);
+  border: none;
+}
+#closeBtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: red;
+  font-size: 32px;
+  line-height: 1;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s ease, transform 0.2s ease;
+}
+
+#closeBtn:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transform: scale(1.1);
+}
+
+#pictureDescription {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  margin-top: 10px;
+  font-weight: 500;
 }
 
 
