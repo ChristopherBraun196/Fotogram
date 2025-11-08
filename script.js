@@ -3,6 +3,9 @@ const container = document.getElementById("holidaypicture");
 const dialog = document.getElementById("pictureDialog");
 const bigImg = document.getElementById("bigImg");
 
+const closeBtn = document.getElementById("closeBtn");
+const prevBtn  = document.getElementById("prevBtn");
+const nextBtn  = document.getElementById("nextBtn");
 
 //Meine Bilder
 const pictures = [
@@ -38,7 +41,7 @@ function openDialog(src, altText, description) {
   bigImg.src = src;
   bigImg.alt = altText;
   const descElem = document.getElementById("pictureDescription");
-  descElem.textContent = description;
+  descElem.innerHTML = description;
   dialog.showModal("bigImg");
   dialog.classList.add("opened");
 }
@@ -47,6 +50,16 @@ function openDialog(src, altText, description) {
 function closeDialog() {
   dialog.close();
   dialog.classList.remove("opened");
+}
+
+function showAt(index) {
+  // wrap-around
+  if (index < 0) index = pictures.length - 1;
+  if (index >= pictures.length) index = 0;
+   currentIndex = index;
+  bigImg.src = pictures[currentIndex];
+  bigImg.alt = pictureDescription[currentIndex] || `Bild ${currentIndex + 1}`;
+  descElem.textContent = pictureDescription[currentIndex] || "";
 }
 
 dialog.addEventListener("click", (event) =>{
