@@ -23,18 +23,19 @@
     <main>
       <h1>Mein persönliches Fotoalbum</h1>
      
+      <!-- Container für kleine Bilder  -->
 
       <div id="holidaypicture"></div>
 
       <!-- Overlay für das große Bild -->
       <div id="overlay" style="display: none">
-        <span id="close-btn" aria-label="Schließen">&times;</span>
+        <span onclick= "close-btn" aria-label="Schließen">&times;</span>
         <span id="prev-btn" aria-label="Vorheriges Bild"></span>
         <img id="overlay-img" src="" alt= "" />
-        <p id="Description" aria-label="Bildbeschreibung"></p>
+        <p id="pictureDescription" aria-label="Bildbeschreibung"></p>
         <span id="next-btn" aria-label="Nächstes Bild"></span>
 
-      <script src="./script.js"></script>
+      
     </main>
 
     <footer>
@@ -48,6 +49,6 @@
         elemRef.focus();
       }
     </script> -->
-
+    <script src="./script.js"></script>
   </body>
 </html>

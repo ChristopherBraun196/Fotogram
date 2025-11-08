@@ -3,7 +3,7 @@
 const container = document.getElementById ("holidaypicture");
 
 //Meine Bilder 
-const pictures = [ //Bilder NAMEN + GRÖßE muss noch angepasst werden
+let pictures = [ //Bilder NAMEN + GRÖßE muss noch angepasst werden
     "./img/IMG_5554.jpg",
     "./img/IMG_5555.jpg",
     "./img/IMG_5607.jpg",
@@ -35,6 +35,8 @@ const overlay = document.getElementById("overlay");
 const overlayImg = document.getElementById("overlay-img");
 const Description = document.getElementById ("pictureDescription")
 const closeBtn = document.getElementById("close-btn");
+const prevBtn = document.getElementById("prev-btn"); // noch hinzufügen 
+const nextBtn = document.getElementById("next-btn"); // noch hinzufügen
 
 
 //Eine Schleife, um jedes Bild einzufügen    KLEINE BILDER
@@ -45,6 +47,7 @@ for (let i = 0; i < pictures.length; i++) {
   img.style.margin = "10px";                    // Abstand zwischen Bildern
   img.style.cursor = "pointer";                 // Zeigt, dass man klicken kann
   img.style.borderRadius = "10px";
+  
 
 
   // Wenn auf das Bild geklickt wird
@@ -52,7 +55,6 @@ for (let i = 0; i < pictures.length; i++) {
     overlayImg.src = this.src;       // zeig das gleiche Bild groß
     overlay.innerHTML += pictureDescription [i]; // Bild Beschreibung hinzufügen
     overlay.style.display = "flex";  // zeig das Overlay
-   
   });
 
   container.appendChild(img);                   // In den Container einfügen
@@ -65,4 +67,4 @@ closeBtn.addEventListener("click", function() {
 
 
 
-// Kontrollausgabe console.log(pictures);
+// Kontrollausgabe console.log(closeBtn);
