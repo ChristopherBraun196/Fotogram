@@ -4,8 +4,8 @@ const dialog = document.getElementById("pictureDialog");
 const bigImg = document.getElementById("bigImg");
 
 const closeBtn = document.getElementById("closeBtn");
-const prevBtn  = document.getElementById("prevBtn");
-const nextBtn  = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
 
 //Meine Bilder
 const pictures = [
@@ -52,24 +52,14 @@ function closeDialog() {
   dialog.classList.remove("opened");
 }
 
-function showAt(index) {
-  // wrap-around
-  if (index < 0) index = pictures.length - 1;
-  if (index >= pictures.length) index = 0;
-   currentIndex = index;
-  bigImg.src = pictures[currentIndex];
-  bigImg.alt = pictureDescription[currentIndex] || `Bild ${currentIndex + 1}`;
-  descElem.textContent = pictureDescription[currentIndex] || "";
-}
-
-dialog.addEventListener("click", (event) =>{
+dialog.addEventListener("click", (event) => {
   if (event.target === dialog) {
     closeDialog();
   }
-} )
+});
 document.getElementById("closeBtn").addEventListener("click", closeDialog);
 
-//Eine Schleife, um jedes Bild einzufügen    KLEINE BILDER
+// KLEINE BILDER
 for (let i = 0; i < pictures.length; i++) {
   const img = document.createElement("img"); // Richtiges <img>-Element erstellen
   img.src = pictures[i]; // Pfad zum Bild
@@ -77,14 +67,12 @@ for (let i = 0; i < pictures.length; i++) {
   img.classList.add("small-img"); // img css style
   img.loading = "lazy";
 
-// Klick öffnet das Bild im Dialog über unsere Funktion:
- img.addEventListener("click", () => openDialog(pictures[i], pictureDescription[i], pictureDescription[i]));
+  // Bild öffnen
+  img.addEventListener("click", () =>
+    openDialog(pictures[i], pictureDescription[i], pictureDescription[i])
+  );
 
- container.appendChild(img);
-  // Wenn auf das Bild geklickt wird
-
- 
-
+  container.appendChild(img);
 }
 
 // Kontrollausgabe console.log(closeBtn);
