@@ -64,7 +64,7 @@ document.getElementById("closeBtn").addEventListener("click", closeDialog);
 for (let i = 0; i < pictures.length; i++) {
   const img = document.createElement("img"); // Richtiges <img>-Element erstellen
   img.src = pictures[i]; // Pfad zum Bild
-  img.alt = pictureDescription[i] || `Bild ${i + 1}`;
+  img.alt = pictureDescription[i] || `img ${i + 1}`;
   img.classList.add("small-img"); // img css style
   img.loading = "lazy";
 
