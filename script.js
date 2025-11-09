@@ -35,6 +35,9 @@ const pictureDescription = [
 // aktueller Index (global, damit onclick-Funktionen ihn sehen)
 let currentIndex = 0;
 
+
+
+
 function renderImage() {
   bigImg.src = pictures[currentIndex];
   bigImg.alt = pictureDescription[currentIndex] || `Bild ${currentIndex + 1}`;
@@ -96,7 +99,7 @@ for (let i = 0; i < pictures.length; i++) {
   img.alt = pictureDescription[i] || `img ${i + 1}`;
   img.classList.add("small-img"); // img css style
   img.loading = "lazy";
-
+  img.tabIndex = 0; // <img tabindex="0">
   // Bild öffnen
   img.addEventListener("click", () => openDialogAt(i));
 
