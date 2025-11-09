@@ -28,11 +28,14 @@
       <div id="holidaypicture" class="img-container"></div>
 
       <!-- Overlay für das große Bild -->
-      <dialog id="pictureDialog">       
-        <button id="closeBtn" aria-label="Dialog schließen">×</button>
-        <button id="prevBtn" class="nav-btn" aria-label="Vorheriges Bild">‹</button>
-        <button id="nextBtn" class="nav-btn" aria-label="Nächstes Bild">›</button>
-        <img id="bigImg" src="" alt="Bild in Vollansicht" />
+      <dialog id="pictureDialog"
+          onclick="closeImg(event)"
+          onkeydown="switchKey(event)"
+          tabindex="-1">       
+        <button onclick="closeBtn()" class="closeBtn" aria-label="Dialog schließen">×</button>
+        <button onclick="prevBtn()" class="nav-btn prevBtn" aria-label="Vorheriges Bild">‹</button>
+        <button onclick="nextBtn()" class="nav-btn nextBtn" aria-label="Nächstes Bild">›</button>
+        <img id="bigImg" src="" onclick="event.stopPropagation()" alt="Bild in Vollansicht" />
          <p id="pictureDescription"></p>
       </dialog>
     </main>

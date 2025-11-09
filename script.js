@@ -3,11 +3,6 @@ const container = document.getElementById("holidaypicture");
 const dialog = document.getElementById("pictureDialog");
 const bigImg = document.getElementById("bigImg");
 
-// Button vom Dialog 
-const closeBtn = document.getElementById("closeBtn");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-
 //Meine Bilder
 const pictures = [
   //Bilder (NAMEN + GRÖßE muss noch angepasst werden)
@@ -23,7 +18,7 @@ const pictures = [
   "./img/IMG_9154.jpg",
 ];
 
-// Bildebeschreibung
+// Bildebeschreibung und Bildtext (alt & p)
 const pictureDescription = [
   "Hotel Außenansicht",
   "Strand auf Mallorca",
@@ -37,28 +32,65 @@ const pictureDescription = [
   "Strand Spaziergang auf Mallorca",
 ];
 
-// Dialogfenster öffnen
-function openDialog(src, altText, description) {
-  bigImg.src = src;
-  bigImg.alt = altText;
-  const descElem = document.getElementById("pictureDescription");
-  descElem.innerHTML = description;
-  dialog.showModal("bigImg");
-  dialog.classList.add("opened");
+// aktueller Index (global, damit onclick-Funktionen ihn sehen)
+let currentIndex = 0;
+
+function renderImage() {
+  bigImg.src = pictures[currentIndex];
+  bigImg.alt = pictureDescription[currentIndex] || `Bild ${currentIndex + 1}`;
+  document.getElementById("pictureDescription").innerHTML =
+    pictureDescription[currentIndex] || "";
 }
 
-// Dialogfenster schließen
-function closeDialog() {
+// onclick aus HTML
+
+function closeBtn() {
+  const dialog = document.getElementById("pictureDialog");
   dialog.close();
   dialog.classList.remove("opened");
 }
 
-dialog.addEventListener("click", (event) => {
-  if (event.target === dialog) {
-    closeDialog();
+function nextBtn() {
+  currentIndex = (currentIndex + 1) % pictures.length;
+  renderImage();
+}
+
+function prevBtn() {
+  currentIndex = (currentIndex - 1 + pictures.length) % pictures.length;
+  renderImage();
+}
+
+function openDialogAt(i) {
+  currentIndex = i;
+  renderImage(); // zeigt Bild + Text
+  dialog.showModal();
+  dialog.classList.add("opened");
+  dialog.focus();
+}
+
+function closeImg(e) {
+    // schließe nur, wenn wirklich auf den Dialog-Hintergrund geklickt wurde,
+    // nicht auf das Bild oder Buttons etc.
+  if (e.target === dialog) {
+      closeBtn();
+    }
   }
-});
-document.getElementById("closeBtn").addEventListener("click", closeDialog);
+
+function switchKey(e) {
+  if (!dialog.open) return;
+
+  if (e.key === "ArrowRight") {
+    e.preventDefault();
+    nextBtn();
+  } else if (e.key === "ArrowLeft") {
+    e.preventDefault();
+    prevBtn();
+  } else if (e.key === "Escape") {
+    e.preventDefault();
+    closeBtn();
+  }
+}
+
 
 // KLEINE BILDER
 for (let i = 0; i < pictures.length; i++) {
@@ -69,9 +101,7 @@ for (let i = 0; i < pictures.length; i++) {
   img.loading = "lazy";
 
   // Bild öffnen
-  img.addEventListener("click", () =>
-    openDialog(pictures[i], pictureDescription[i], pictureDescription[i])
-  );
+  img.addEventListener("click", () => openDialogAt(i));
 
   container.appendChild(img);
 }
