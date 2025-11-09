@@ -68,13 +68,11 @@ function openDialogAt(i) {
   dialog.focus();
 }
 
-function closeImg(e) {
-    // schließe nur, wenn wirklich auf den Dialog-Hintergrund geklickt wurde,
-    // nicht auf das Bild oder Buttons etc.
+function closeImg(e) { // Schließt das Bild wenn man daneben klickt 
   if (e.target === dialog) {
-      closeBtn();
-    }
+    closeBtn();
   }
+}
 
 function switchKey(e) {
   if (!dialog.open) return;
@@ -91,10 +89,9 @@ function switchKey(e) {
   }
 }
 
-
 // KLEINE BILDER
 for (let i = 0; i < pictures.length; i++) {
-  const img = document.createElement("img"); // Richtiges <img>-Element erstellen
+  const img = document.createElement("img"); 
   img.src = pictures[i]; // Pfad zum Bild
   img.alt = pictureDescription[i] || `img ${i + 1}`;
   img.classList.add("small-img"); // img css style
