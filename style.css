@@ -181,7 +181,7 @@ footer {
   height: 50px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   main {
     margin-inline: 70px;
   }
