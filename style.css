@@ -10,6 +10,7 @@ body {
 }
 
 header {
+  display: flex;
   margin: 20px;
   display: flex;
   justify-content: space-between;
@@ -34,6 +35,10 @@ header {
   text-decoration: none;
   color: darkgrey;
  
+}
+
+.NavBarContact{
+  height: 80px;
 }
 
 .HeaderLogo {
@@ -185,10 +190,9 @@ footer {
   main {
     margin-inline: 70px;
   }
-  .NavBar a {
-    display: none;
-  }
-
+.NavBarContact{
+  height: 60px;
+}
   h1 {
     font-size: 48px;
     margin-top: 50px;
@@ -220,18 +224,18 @@ footer {
 
 @media (max-width: 455px) {
   main {
-    margin-inline: 95px;
+    margin-inline: 55px;
   }
   header {
-    margin-inline: 15px;
+    margin-inline: 5px;
   }
-  .NavBar a {
-    display: none;
-  }
+.NavBarContact{
+  height: 32px;
+}
 
   .HeaderLogo {
     display: flex;
-    width: 215px;
+    width: 180px;
     margin-inline: 25px;
     justify-content: center;
   }
