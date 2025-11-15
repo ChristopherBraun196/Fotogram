@@ -1,25 +1,25 @@
 // Meine Bilder in klein
-const container = document.getElementById("holidaypicture");
-const dialog = document.getElementById("pictureDialog");
-const bigImg = document.getElementById("bigImg");
+let container = document.getElementById("holidaypicture");
+let dialog = document.getElementById("pictureDialog");
+let bigImg = document.getElementById("bigImg");
 
 //Meine Bilder
-const pictures = [
+let pictures = [
   //Bilder (NAMEN + GRÖßE muss noch angepasst werden)
-  "./img/IMG_5554.jpg",
-  "./img/IMG_5555.jpg",
-  "./img/IMG_5607.jpg",
-  "./img/IMG_5663.jpg",
-  "./img/IMG_5726.jpg",
-  "./img/Strand1.jpg",
-  "./img/IMG_5759.jpg",
-  "./img/IMG_5765.jpg",
-  "./img/IMG_5771.jpg",
-  "./img/IMG_9154.jpg",
+  "./img/img1.jpg",
+  "./img/img2.jpg",
+  "./img/img3.jpg",
+  "./img/img4.jpg",
+  "./img/img5.jpg",
+  "./img/img6.jpg",
+  "./img/img7.jpg",
+  "./img/img8.jpg",
+  "./img/img9.jpg",
+  "./img/img10.jpg",
 ];
 
 // Bildebeschreibung und Bildtext (alt & p)
-const pictureDescription = [
+let pictureDescription = [
   "Hotel Außenansicht",
   "Strand auf Mallorca",
   "Blick vom Hotelzimmer Morgens",
@@ -48,7 +48,7 @@ function renderImage() {
 // onclick aus HTML
 
 function closeBtn() {
-  const dialog = document.getElementById("pictureDialog");
+  let dialog = document.getElementById("pictureDialog");
   dialog.close();
   dialog.classList.remove("opened");
 }
@@ -94,10 +94,10 @@ function switchKey(e) {
 
 // KLEINE BILDER
 for (let i = 0; i < pictures.length; i++) {
-  const img = document.createElement("img"); 
+  let img = document.createElement("img"); 
   img.src = pictures[i]; // Pfad zum Bild
   img.alt = pictureDescription[i] || `img ${i + 1}`;
-  img.classList.add("small-img"); // img css style
+  img.classList.add("SmallImg"); // img css style
   img.loading = "lazy";
   img.tabIndex = 0; // <img tabindex="0">
   // Bild öffnen

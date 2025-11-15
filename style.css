@@ -19,14 +19,14 @@ header {
   box-shadow: 5px 5px 5px rgb(32, 181, 230);
 }
 
-.nav-bar a {
+.NavBar a {
   font-size: 18px;
   color: white;
   text-decoration: none;
   margin: 16px;
 }
 
-.nav-bar a:hover {
+.NavBar a:hover {
   display: inline-block;
   transition: color 0.3s ease, transform 0.6s ease;
   transform: scale(1.1);
@@ -36,7 +36,7 @@ header {
  
 }
 
-.header-logo {
+.HeaderLogo {
   width: 350px;
   margin: 20px;
 }
@@ -55,20 +55,20 @@ h1 {
   color: white;
   font-size: 60px;
 }
-.img-container {
+.ImgContainer {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
   padding: 16px;
 }
-.small-img {
+.SmallImg {
   width: 250px;
   height: 180px;
   object-fit: cover;
   border-radius: 10px;
   display: block;
 }
-.small-img:hover {
+.SmallImg:hover {
   transform: scale(1.1);
 }
 
@@ -96,7 +96,7 @@ dialog::backdrop {
   box-shadow: 0 0 0px rgba(0, 0, 0, 0.8);
   border: none;
 }
-.closeBtn {
+.CloseBtn {
   position: absolute;
   top: 15px;
   right: 20px;
@@ -112,12 +112,12 @@ dialog::backdrop {
   transition: 0.3s ease, transform 0.2s ease;
 }
 
-.closeBtn:hover {
+.CloseBtn:hover {
   background: rgba(0, 0, 0, 0.85);
   transform: scale(1.1);
 }
 
-.nav-btn {
+.NavBtn {
   position: absolute;
   top: 50%;
   background: rgba(0, 0, 0, 0.6);
@@ -131,24 +131,24 @@ dialog::backdrop {
   line-height: 1;
   cursor: pointer;
 }
-.nav-btn:hover {
+.NavBtn:hover {
   background: rgba(0, 0, 0, 0.85);
 }
 
-.prevBtn {
+.PrevBtn {
   left: 16px;
 }
 
-.prevBtn:hover {
+.PrevBtn:hover {
   transform: scale(1.1);
   transition: 0.3s ease, transform 0.2s ease;
 }
 
-.nextBtn {
+.NextBtn {
   right: 16px;
 }
 
-.nextBtn:hover {
+.NextBtn:hover {
   transform: scale(1.1);
   transition: 0.3s ease, transform 0.2s ease;
 }
@@ -185,7 +185,7 @@ footer {
   main {
     margin-inline: 70px;
   }
-  .nav-bar a {
+  .NavBar a {
     display: none;
   }
 
@@ -194,7 +194,7 @@ footer {
     margin-top: 50px;
     margin-inline: 15px;
   }
-  .img-container {
+  .ImgContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -202,11 +202,11 @@ footer {
     object-fit: cover;
   }
 
-  .img-container img {
+  .ImgContainer img {
     width: 300px;
     border-radius: 10px;
   }
-  .small-img {
+  .SmallImg {
     width: 300px;
     height: 150px;
     object-fit: cover;
@@ -225,11 +225,11 @@ footer {
   header {
     margin-inline: 15px;
   }
-  .nav-bar a {
+  .NavBar a {
     display: none;
   }
 
-  .header-logo {
+  .HeaderLogo {
     display: flex;
     width: 215px;
     margin-inline: 25px;
@@ -244,11 +244,11 @@ footer {
     text-align: center;
   }
 
-  .small-img {
+  .SmallImg {
     width: 300px;
     height: 150px;
   }
-  .img-container {
+  .ImgContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
@@ -258,14 +258,14 @@ footer {
     flex-direction: row;
   }
 
-  .closeBtn {
+  .CloseBtn {
     top: 5px;
     right: 8px;
     font-size: 24px;
     width: 30px;
     height: 30px;
   }
-  .nav-btn {
+  .NavBtn {
     font-size: 24px;
     width: 30px;
     height: 30px;
