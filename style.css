@@ -34,10 +34,9 @@ header {
   cursor: pointer;
   text-decoration: none;
   color: darkgrey;
- 
 }
 
-.NavBarContact{
+.NavBarContact {
   height: 80px;
 }
 
@@ -186,13 +185,26 @@ footer {
   height: 50px;
 }
 
+@media (min-width: 2500px) and (max-width: 7200px) {
+  .widthScreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* max-width: 1400px;  */
+    margin-left: auto;
+    margin-right: auto; 
+    padding: 0 20px; 
+    text-align: center;
+  }
+}
+
 @media (max-width: 1400px) {
   main {
     margin-inline: 70px;
   }
-.NavBarContact{
-  height: 60px;
-}
+  .NavBarContact {
+    height: 60px;
+  }
   h1 {
     font-size: 48px;
     margin-top: 50px;
@@ -229,9 +241,9 @@ footer {
   header {
     margin-inline: 5px;
   }
-.NavBarContact{
-  height: 32px;
-}
+  .NavBarContact {
+    height: 32px;
+  }
 
   .HeaderLogo {
     display: flex;
@@ -276,7 +288,7 @@ footer {
   }
 
   #pictureDescription {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   footer {

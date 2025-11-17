@@ -8,27 +8,30 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body id="headline">
-    <header>
+    <header aria-label="Header mit NavBar" >
       <img
-        class="HeaderLogo"
+        class="HeaderLogo widthScreen"
         src="./Icons/Fotogram_Logo.svg"
         alt="HeaderLogo"
       />
-      <nav class="NavBar" aria-label="Navigationsleiste">
+      <nav class="NavBar widthScreen" aria-label="Navigationsleiste">
         <a href="tel:+491715120272">
-          <img class="NavBarContact" src="./Icons/phone.png" alt="Anrufen">
+          <img class="NavBarContact" src="./Icons/phone.png" alt="Anrufen" />
         </a>
         <a href="mailto:dev.christopher-braun@gmail.com">
-          <img class="NavBarContact" src="./Icons/mail.png" alt="mailto"></a
-        >
+          <img class="NavBarContact" src="./Icons/mail.png" alt="mailto"
+        /></a>
       </nav>
     </header>
     <main>
-      <h1 aria-label="Überschrift">Mein persönliches Fotoalbum</h1>
+      <h1 class="widthScreen" aria-label="Überschrift">Mein persönliches Fotoalbum</h1>
 
       <!-- Container für kleine Bilder  -->
-      <section>
-        <div id="holidaypicture" class="ImgContainer"></div>
+      <section class="widthScreen">
+        <template id="imgTemplate">
+          <img class="SmallImg" loading="lazy" tabindex="0" />
+        </template>
+        <div id="holidaypicture" class="ImgContainer widthScreen"></div>
 
         <!-- Overlay für das große Bild -->
         <dialog
@@ -69,9 +72,9 @@
       </section>
     </main>
 
-    <footer>
-      <img class="footer-icon" src="./Icons/favicon.png" alt="footer-icon" />
-      © 2025 – Christopher Braun
+    <footer >
+      <img class="footer-icon widthScreen" src="./Icons/favicon.png" alt="footer-icon" />
+      <p class="widthScreen">© 2025 – Christopher Braun</p>
     </footer>
 
     <script src="./script.js"></script>
