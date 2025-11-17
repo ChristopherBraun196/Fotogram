@@ -198,7 +198,7 @@ footer {
   }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1550px) {
   main {
     margin-inline: 70px;
   }
@@ -230,10 +230,26 @@ footer {
     display: block;
   }
   footer {
+    /* position: static; */
+  }
+}
+@media (max-width:1117px){
+   footer {
     position: static;
   }
 }
 
+@media (max-width:650px){
+  header {
+    margin-inline: 2px;
+   }
+  .NavBarContact {
+    height: 30px;
+  }
+  .NavBarContact {
+    height: 28px;
+  }
+}
 @media (max-width: 455px) {
   main {
     margin-inline: 55px;
