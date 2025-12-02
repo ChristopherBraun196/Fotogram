@@ -46,10 +46,11 @@ function initGallery() {
 
   for (let i = 0; i < pictures.length; i++) {
     container.innerHTML += `
-      <figure class="SmallImgWrapper">
+      <figure class="SmallImgWrapper"  aria-label="${pictureDescription[i]}">
         <button
           class="SmallImgButton"
           type="button"
+          role="button"
           onclick="openDialogAt(${i})"
           aria-label="${pictureDescription[i]}"
         >
