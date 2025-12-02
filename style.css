@@ -12,7 +12,6 @@ body {
 header {
   display: flex;
   margin: 20px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100px;
@@ -59,12 +58,32 @@ h1 {
   color: white;
   font-size: 60px;
 }
+
 .ImgContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 24px;
   padding: 16px;
 }
+
+.SmallImgWrapper {
+  display: inline-block;
+}
+
+.SmallImgButton {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.SmallImgButton:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
+}
+
 .SmallImg {
   width: 250px;
   height: 180px;
@@ -72,6 +91,7 @@ h1 {
   border-radius: 10px;
   display: block;
 }
+
 .SmallImg:hover {
   transform: scale(1.1);
 }
@@ -90,7 +110,6 @@ dialog::backdrop {
   border: none;
 }
 
-/* Bild zentrieren */
 #bigImg {
   display: block;
   max-width: 70vw;
@@ -100,6 +119,7 @@ dialog::backdrop {
   box-shadow: 0 0 0px rgba(0, 0, 0, 0.8);
   border: none;
 }
+
 .CloseBtn {
   position: absolute;
   top: 15px;
@@ -135,6 +155,7 @@ dialog::backdrop {
   line-height: 1;
   cursor: pointer;
 }
+
 .NavBtn:hover {
   background: rgba(0, 0, 0, 0.85);
 }
@@ -185,15 +206,14 @@ footer {
   height: 50px;
 }
 
-@media (min-width: 2500px) and (max-width: 7200px) {
+@media (min-width: 3000px) and (max-width: 7200px) {
   .widthScreen {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* max-width: 1400px;  */
     margin-left: auto;
-    margin-right: auto; 
-    padding: 0 20px; 
+    margin-right: auto;
+    padding: 0 20px;
     text-align: center;
   }
 }
@@ -202,14 +222,17 @@ footer {
   main {
     margin-inline: 70px;
   }
+
   .NavBarContact {
     height: 60px;
   }
+
   h1 {
     font-size: 48px;
     margin-top: 50px;
     margin-inline: 15px;
   }
+
   .ImgContainer {
     display: flex;
     flex-wrap: wrap;
@@ -222,6 +245,7 @@ footer {
     width: 300px;
     border-radius: 10px;
   }
+
   .SmallImg {
     width: 300px;
     height: 150px;
@@ -230,33 +254,35 @@ footer {
     display: block;
   }
   footer {
-    /* position: static; */
-  }
-}
-@media (max-width:1117px){
-   footer {
     position: static;
   }
 }
 
-@media (max-width:650px){
+@media (max-width: 1950px) {
+  footer {
+    position: static;
+  }
+}
+
+@media (max-width: 650px) {
   header {
     margin-inline: 2px;
-   }
-  .NavBarContact {
-    height: 30px;
   }
+
   .NavBarContact {
     height: 28px;
   }
 }
+
 @media (max-width: 455px) {
   main {
     margin-inline: 55px;
   }
+
   header {
-    margin-inline: 5px;
+    margin-inline: 10px;
   }
+
   .NavBarContact {
     height: 32px;
   }
@@ -267,8 +293,8 @@ footer {
     margin-inline: 25px;
     justify-content: center;
   }
+
   h1 {
-    text-align: start;
     display: flex;
     font-size: 26px;
     margin-inline: -15px;
@@ -277,9 +303,10 @@ footer {
   }
 
   .SmallImg {
-    width: 300px;
-    height: 150px;
+    width: 220px;
+    height: 180px;
   }
+
   .ImgContainer {
     display: flex;
     flex-wrap: wrap;
@@ -297,6 +324,7 @@ footer {
     width: 30px;
     height: 30px;
   }
+
   .NavBtn {
     font-size: 24px;
     width: 30px;
@@ -309,5 +337,6 @@ footer {
 
   footer {
     position: static;
+    margin-inline: 10px;
   }
 }

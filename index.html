@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body id="headline">
-    <header aria-label="Header mit NavBar" >
+    <header aria-label="Header mit NavBar">
       <img
         class="HeaderLogo widthScreen"
         src="./Icons/Fotogram_Logo.svg"
@@ -23,57 +23,61 @@
         /></a>
       </nav>
     </header>
-    <main>
-      <h1 class="widthScreen" aria-label="Überschrift">Mein persönliches Fotoalbum</h1>
+    <main >
 
-      <!-- Container für kleine Bilder  -->
-      <section class="widthScreen">
-        <template id="imgTemplate">
-          <img class="SmallImg" loading="lazy" tabindex="0" />
-        </template>
-        <div id="holidaypicture" class="ImgContainer widthScreen"></div>
+      <h1 class="widthScreen" aria-label="Überschrift">
+        Mein persönliches Fotoalbum
+      </h1>
 
-        <!-- Overlay für das große Bild -->
-        <dialog
-          id="pictureDialog"
-          onclick="closeImg(event)"
-          onkeydown="switchKey(event)"
+      <!-- Container for pictures  -->
+      <div  id="holidayPicture" class="ImgContainer widthScreen"></div>
+
+      <!-- Dialog for Big Pictures -->
+      <dialog
+        id="pictureDialog"
+        onclick="closeImg(event)"
+        onkeydown="switchKey(event)"
+        aria-label="öffnet den Dialog"
+      >
+        <button
+          onclick="closeBtn()"
+          class="CloseBtn"
+          aria-label="Dialog schließen"
         >
-          <button
-            onclick="closeBtn()"
-            class="CloseBtn"
-            aria-label="Dialog schließen"
-          >
-            ×
-          </button>
-          <button
-            onclick="prevBtn()"
-            class="NavBtn PrevBtn"
-            aria-label="Vorheriges Bild"
-          >
-            ‹
-          </button>
-          <button
-            onclick="nextBtn()"
-            class="NavBtn NextBtn"
-            aria-label="Nächstes Bild"
-          >
-            ›
-          </button>
-          <img
-            tabindex="-1"
-            id="bigImg"
-            src=""
-            onclick="event.stopPropagation()"
-            alt="Bild in Vollansicht"
-          />
-          <p id="pictureDescription"></p>
-        </dialog>
-      </section>
+          ×
+        </button>
+        <button
+          onclick="prevBtn()"
+          class="NavBtn PrevBtn"
+          aria-label="Vorheriges Bild"
+        >
+          ‹
+        </button>
+        <button
+          onclick="nextBtn()"
+          class="NavBtn NextBtn"
+          aria-label="Nächstes Bild"
+        >
+          ›
+        </button>
+        <img
+          tabindex="0"
+          id="bigImg"
+          src=""
+          onclick="event.stopPropagation()"
+          alt="Bild in Vollansicht"
+          aria-label="Überschrift"
+        />
+        <p id="pictureDescription" aria-label="Bildbeschreibung"></p>
+      </dialog>
     </main>
 
-    <footer >
-      <img class="footer-icon widthScreen" src="./Icons/favicon.png" alt="footer-icon" />
+    <footer>
+      <img
+        class="footer-icon widthScreen"
+        src="./Icons/favicon.png"
+        alt="footer-icon"
+      />
       <p class="widthScreen">© 2025 – Christopher Braun</p>
     </footer>
 

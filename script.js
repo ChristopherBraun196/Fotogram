@@ -1,11 +1,11 @@
-// Meine Bilder in klein
-let container = document.getElementById("holidaypicture");
-let dialog = document.getElementById("pictureDialog");
-let bigImg = document.getElementById("bigImg");
+//Index (global, onclick function)
+let currentIndex = 0;
 
-//Meine Bilder
+let dialog;
+let bigImg;
+
+//Load my Pictures
 let pictures = [
-  //Bilder (NAMEN + GRÖßE muss noch angepasst werden)
   "./img/img1.jpg",
   "./img/img2.jpg",
   "./img/img3.jpg",
@@ -18,7 +18,7 @@ let pictures = [
   "./img/img10.jpg",
 ];
 
-// Bildebeschreibung und Bildtext (alt & p)
+// (alt and p text)
 let pictureDescription = [
   "Hotel Außenansicht",
   "Strand auf Mallorca",
@@ -32,88 +32,93 @@ let pictureDescription = [
   "Strand Spaziergang auf Mallorca",
 ];
 
-//Index (global, onclick function)
-let currentIndex = 0;
+window.onload = function () {
+  // DOM
+  dialog = document.getElementById("pictureDialog");
+  bigImg = document.getElementById("bigImg");
 
-function createGallery() {
-  let;
+  initGallery();
+};
+
+function initGallery() {
+  const container = document.getElementById("holidayPicture");
+  container.innerHTML = "";
+
+  for (let i = 0; i < pictures.length; i++) {
+    container.innerHTML += `
+      <figure class="SmallImgWrapper">
+        <button
+          class="SmallImgButton"
+          type="button"
+          onclick="openDialogAt(${i})"
+          aria-label="${pictureDescription[i]}"
+        >
+          <img
+            class="SmallImg"
+            src="${pictures[i]}"
+            alt="${pictureDescription[i]}"
+          >
+        </button>
+      </figure>
+    `;
+  }
+}
+
+function openDialogAt(i) {
+  currentIndex = i;
+  renderImage();
+
+  dialog.showModal();
+  dialog.classList.add("opened");
+  dialog.focus();
 }
 
 function renderImage() {
   bigImg.src = pictures[currentIndex];
-  bigImg.alt = pictureDescription[currentIndex] || `img ${currentIndex + 1}`;
-  document.getElementById("pictureDescription").innerHTML =
-    pictureDescription[currentIndex] || "";
+  bigImg.alt = pictureDescription[currentIndex];
+
+  document.getElementById("pictureDescription").innerText =
+    pictureDescription[currentIndex];
 }
 
-// onclick from HTML
+function openOnEnter(event, i) {
+  if (event.key === "Enter") {
+    openDialogAt(i);
+  }
+}
+
+function switchKey(event) {
+  if (event.key === "Escape") {
+    closeBtn();
+  }
+  if (event.key === "ArrowLeft") {
+    prevBtn();
+  }
+  if (event.key === "ArrowRight") {
+    nextBtn();
+  }
+}
 
 function closeBtn() {
-  let dialog = document.getElementById("pictureDialog");
+  if (!dialog) return;
   dialog.close();
   dialog.classList.remove("opened");
 }
 
+function closeImg(event) {
+  if (event.target === dialog) {
+    closeBtn();
+  }
+}
+
 function nextBtn() {
-  currentIndex = (currentIndex + 1) % pictures.length;
+  currentIndex++;
+  if (currentIndex >= pictures.length) currentIndex = 0;
   renderImage();
 }
 
 function prevBtn() {
-  currentIndex = (currentIndex - 1 + pictures.length) % pictures.length;
+  currentIndex--;
+  if (currentIndex < 0) currentIndex = pictures.length - 1;
   renderImage();
 }
-// Open display images to Dialog 
-function openDialogAt(i) {
-  currentIndex = i;
-  renderImage(); // zeigt Bild + Text
-  dialog.showModal();
-  dialog.classList.add("opened");
-  dialog.focus(); 
-}
-
-function openImg(e) {
-  if (e.target === dialog) {
-    
-  }
-}
-
-function closeImg(e) {
-  // Close display images 
-  if (e.target === dialog) {
-    closeBtn();
-  }
-}
-
-function switchKey(e) {
-  if (!dialog.open) return;
-
-  if (e.key === "ArrowRight") {
-    e.preventDefault();
-    nextBtn();
-  } else if (e.key === "ArrowLeft") {
-    e.preventDefault();
-    prevBtn();
-  } else if (e.key === "Escape") {
-    e.preventDefault();
-    closeBtn();
-  }
-}
-
-// Renderig display images
-for (let i = 0; i < pictures.length; i++) {
-  let img = document.createElement("img");
-  img.src = pictures[i]; // Pfad zum Bild
-  img.alt = pictureDescription[i] || `img ${i + 1}`;
-  img.classList.add("SmallImg"); // img css style
-  img.loading = "lazy";
-  img.tabIndex = 0; // <img tabindex="0">
-
-  // Open display images
-
-  img.addEventListener("click", () => openDialogAt(i));
-
-  container.appendChild(img);
-}
-
-// Kontrollausgabe console.log(closeBtn);
