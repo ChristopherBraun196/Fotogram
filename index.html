@@ -13,7 +13,6 @@
         class="HeaderLogo widthScreen"
         src="./Icons/Fotogram_Logo.svg"
         alt="Fotogram"
-        
       />
       <nav class="NavBar widthScreen" aria-label="Navigationsleiste">
         <a href="tel:+491715120272">
@@ -24,53 +23,55 @@
         /></a>
       </nav>
     </header>
-    <main >
-
+    <main>
       <h1 class="widthScreen" aria-label="Überschrift">
         Mein persönliches Fotoalbum
       </h1>
 
       <!-- Container for pictures  -->
-      <div  id="holidayPicture" class="ImgContainer widthScreen"></div>
 
-      <!-- Dialog for Big Pictures -->
-      <dialog
-        id="pictureDialog"
-        onclick="closeImg(event)"
-        onkeydown="switchKey(event)"
-        aria-label="öffnet den Dialog"
-      >
-        <button
-          onclick="closeBtn()"
-          class="CloseBtn"
-          aria-label="Dialog schließen"
+      <section>
+        <div id="holidayPicture" class="ImgContainer widthScreen"></div>
+
+        <!-- Dialog for Big Pictures -->
+        <dialog
+          id="pictureDialog"
+          onclick="closeImg(event)"
+          onkeydown="switchKey(event)"
+          aria-label="öffnet den Dialog"
         >
-          ×
-        </button>
-        <button
-          onclick="prevBtn()"
-          class="NavBtn PrevBtn"
-          aria-label="Vorheriges Bild"
-        >
-          ‹
-        </button>
-        <button
-          onclick="nextBtn()"
-          class="NavBtn NextBtn"
-          aria-label="Nächstes Bild"
-        >
-          ›
-        </button>
-        <img
-          tabindex="0"
-          id="bigImg"
-          src=""
-          onclick="event.stopPropagation()"
-          alt="Bild in Vollansicht"
-          aria-label="Überschrift"
-        />
-        <p id="pictureDescription" aria-label="Bildbeschreibung"></p>
-      </dialog>
+          <button
+            onclick="closeBtn()"
+            class="CloseBtn"
+            aria-label="Dialog schließen"
+          >
+            ×
+          </button>
+          <button
+            onclick="prevBtn()"
+            class="NavBtn PrevBtn"
+            aria-label="Vorheriges Bild"
+          >
+            ‹
+          </button>
+          <button
+            onclick="nextBtn()"
+            class="NavBtn NextBtn"
+            aria-label="Nächstes Bild"
+          >
+            ›
+          </button>
+          <img
+            tabindex="0"
+            id="bigImg"
+            src=""
+            onclick="event.stopPropagation()"
+            alt="Bild in Vollansicht"
+            aria-label="Überschrift"
+          />
+          <p id="pictureDescription" aria-label="Bildbeschreibung"></p>
+        </dialog>
+      </section>
     </main>
 
     <footer>

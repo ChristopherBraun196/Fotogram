@@ -1,9 +1,6 @@
 //Index (global, onclick function)
 let currentIndex = 0;
 
-let dialog;
-let bigImg;
-
 //Load my Pictures
 let pictures = [
   "./img/img1.jpg",

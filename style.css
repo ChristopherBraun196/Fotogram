@@ -1,3 +1,29 @@
+:root {
+  --color-background: #17315e;
+  --color-header: #2c5395;
+  --color-accent: #20b5e6;
+  --color-text: #ffffff;
+  --color-text-muted: #dddddd;
+  --color-danger: red;
+
+  --radius-base: 10px;
+  --radius-round: 50%;
+
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+
+  --img-thumb-width: 250px;
+  --img-thumb-height: 180px;
+
+  --navbar-icon-size: 80px;
+
+  --font-size-title: 60px;
+  --font-size-text: 18px;
+}
+
 @font-face {
   font-family: "Sansation-Bold";
   src: url(./fonts/Sansation-BoldItalic.ttf);
@@ -6,7 +32,7 @@
 body {
   margin: 0;
   font-family: "Sansation-Bold", sans-serif;
-  background-color: rgb(23, 49, 94);
+  background-color: var(--color-background);
 }
 
 header {
@@ -15,15 +41,15 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 100px;
-  background-color: rgb(44, 83, 149);
-  box-shadow: 5px 5px 5px rgb(32, 181, 230);
+  background-color: var(--color-header);
+  box-shadow: 5px 5px 5px var(--color-accent);
 }
 
 .NavBar a {
-  font-size: 18px;
-  color: white;
+  font-size: var(--font-size-text);
+  color: var(--color-text);
   text-decoration: none;
-  margin: 16px;
+  margin: var(--spacing-m);
 }
 
 .NavBar a:hover {
@@ -32,11 +58,11 @@ header {
   transform: scale(1.1);
   cursor: pointer;
   text-decoration: none;
-  color: darkgrey;
+  color: var(--color-text-muted);
 }
 
 .NavBarContact {
-  height: 80px;
+  height: var(--navbar-icon-size);
 }
 
 .HeaderLogo {
@@ -45,9 +71,9 @@ header {
 }
 
 main {
-  margin-inline: 250px;
-  justify-content: center;
-  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-inline: 20px;
   flex: 1;
 }
 
@@ -55,16 +81,16 @@ h1 {
   text-align: center;
   margin-top: 150px;
   margin-bottom: 100px;
-  color: white;
-  font-size: 60px;
+  color: var(--color-text);
+  font-size: var(--font-size-title);
 }
 
 .ImgContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
-  padding: 16px;
+  gap: var(--spacing-l);
+  padding: var(--spacing-m);
 }
 
 .SmallImgWrapper {
@@ -80,15 +106,15 @@ h1 {
 }
 
 .SmallImgButton:focus-visible {
-  outline: 3px solid #ffffff;
+  outline: 3px solid var(--color-text);
   outline-offset: 4px;
 }
 
 .SmallImg {
-  width: 250px;
-  height: 180px;
+  width: var(--img-thumb-width);
+  height: var(--img-thumb-height);
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: var(--radius-base);
   display: block;
 }
 
@@ -114,8 +140,8 @@ dialog::backdrop {
   display: block;
   max-width: 70vw;
   max-height: 60vh;
-  margin: 0;
-  border-radius: 10px;
+  margin: 0 auto;
+  border-radius: var(--radius-base);
   box-shadow: 0 0 0px rgba(0, 0, 0, 0.8);
   border: none;
 }
@@ -125,11 +151,10 @@ dialog::backdrop {
   top: 15px;
   right: 20px;
   background: rgba(0, 0, 0, 0.8);
-  color: red;
+  color: var(--color-danger);
   font-size: 32px;
-  line-height: 1;
   border: none;
-  border-radius: 50%;
+  border-radius: var(--radius-round);
   width: 50px;
   height: 50px;
   cursor: pointer;
@@ -145,14 +170,11 @@ dialog::backdrop {
   position: absolute;
   top: 50%;
   background: rgba(0, 0, 0, 0.6);
-  color: red;
-  border: 2px;
-  border-color: red;
-  border-radius: 50%;
+  color: var(--color-danger);
+  border-radius: var(--radius-round);
   width: 50px;
   height: 50px;
   font-size: 28px;
-  line-height: 1;
   cursor: pointer;
 }
 
@@ -164,23 +186,13 @@ dialog::backdrop {
   left: 16px;
 }
 
-.PrevBtn:hover {
-  transform: scale(1.1);
-  transition: 0.3s ease, transform 0.2s ease;
-}
-
 .NextBtn {
   right: 16px;
 }
 
-.NextBtn:hover {
-  transform: scale(1.1);
-  transition: 0.3s ease, transform 0.2s ease;
-}
-
 #pictureDescription {
   text-align: center;
-  color: white;
+  color: var(--color-text);
   font-size: 24px;
   margin-top: 10px;
   font-weight: 500;
@@ -196,10 +208,10 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  color: white;
+  color: var(--color-text);
   height: 100px;
-  background-color: rgb(44, 83, 149);
-  box-shadow: 5px 5px 5px rgb(32, 181, 230);
+  background-color: var(--color-header);
+  box-shadow: 5px 5px 5px var(--color-accent);
 }
 
 .footer-icon {
@@ -222,53 +234,28 @@ footer {
   main {
     margin-inline: 70px;
   }
-
   .NavBarContact {
     height: 60px;
   }
-
   h1 {
     font-size: 48px;
     margin-top: 50px;
     margin-inline: 15px;
   }
-
   .ImgContainer {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 24px;
-    object-fit: cover;
   }
-
-  .ImgContainer img {
-    width: 300px;
-    border-radius: 10px;
-  }
-
   .SmallImg {
     width: 300px;
     height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-  }
-  footer {
-    position: static;
   }
 }
 
-@media (max-width: 1950px) {
-  footer {
-    position: static;
-  }
-}
 
-@media (max-width: 650px) {
+@media (max-width:650px){
   header {
     margin-inline: 2px;
   }
-
   .NavBarContact {
     height: 28px;
   }
@@ -278,45 +265,29 @@ footer {
   main {
     margin-inline: 55px;
   }
-
   header {
-    margin-inline: 10px;
+    margin-inline: 5px;
   }
-
   .NavBarContact {
     height: 32px;
   }
-
   .HeaderLogo {
-    display: flex;
     width: 180px;
     margin-inline: 25px;
-    justify-content: center;
   }
-
   h1 {
-    display: flex;
     font-size: 26px;
     margin-inline: -15px;
     margin-bottom: 50px;
-    text-align: center;
   }
-
   .SmallImg {
-    width: 220px;
-    height: 180px;
+    width: 300px;
+    height: 150px;
   }
-
   .ImgContainer {
-    display: flex;
-    flex-wrap: wrap;
     gap: 14px;
-    padding: 0px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
+    padding: 0;
   }
-
   .CloseBtn {
     top: 5px;
     right: 8px;
@@ -324,19 +295,15 @@ footer {
     width: 30px;
     height: 30px;
   }
-
   .NavBtn {
     font-size: 24px;
     width: 30px;
     height: 30px;
   }
-
   #pictureDescription {
     font-size: 12px;
   }
-
   footer {
     position: static;
-    margin-inline: 10px;
   }
 }
