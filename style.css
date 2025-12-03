@@ -251,8 +251,7 @@ footer {
   }
 }
 
-
-@media (max-width:650px){
+@media (max-width: 650px) {
   header {
     margin-inline: 2px;
   }
