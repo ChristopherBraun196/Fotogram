@@ -42,7 +42,11 @@ function initGallery() {
   container.innerHTML = "";
 
   for (let i = 0; i < pictures.length; i++) {
-    container.innerHTML += `
+    container.innerHTML += getImageHTML(i); 
+}
+
+function getImageHTML(i){
+  return `
       <figure class="SmallImgWrapper"  aria-label="${pictureDescription[i]}">
         <button
           class="SmallImgButton"
